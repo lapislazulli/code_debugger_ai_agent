@@ -1,0 +1,33 @@
+Analyse le problème selon les règles du contexte, et renvoie un JSON strict respectant exactement le format suivant :
+
+{
+  "delete": [ { "line": numéro_de_ligne, "content": "contenu exact à supprimer" } ],
+  "add": [ { "line": numéro_où_ajouter, "content": "ligne de code à ajouter" } ],
+  "explanations": ["explication pédagogique"],
+  "not_related_to_code": ["recommandations si le bug ne vient pas du code"]
+}
+
+### RÈGLES STRICTES :
+
+1. **Ne réécris JAMAIS tout le script.**  
+   Tu dois uniquement proposer des suppressions et ajouts ligne par ligne.
+
+2. **Si le bug ne provient pas du code**, alors :  
+   - "delete" = []
+   - "add" = []
+   - "explanations" doit contenir des explications pédagogiques  
+   - "not_related_to_code" doit contenir les actions correctives  
+
+3. **Si le bug provient du code**, alors :  
+   - "delete" = lignes précises à enlever  
+   - "add" = lignes à ajouter  
+   - "not_related_to_code" = []
+   - "explanations" doit expliquer le bug et la solution  
+
+4. Pour "delete": indiquer le numéro de ligne et le contenu EXACT
+
+5. Pour "add": indiquer le numéro de ligne et le contenu EXACT
+
+6. Les explications doivent être en français, claires et pédagogiques.
+
+7. Le JSON doit être VALIDE, sans texte en dehors.
