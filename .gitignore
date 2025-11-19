@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# Env / secrets
+.env
+*.env
+credentials.json
+token.json
+
+# VS Code / Mac
+.vscode/
+.DS_Store
